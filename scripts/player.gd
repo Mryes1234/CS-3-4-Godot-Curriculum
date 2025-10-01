@@ -5,7 +5,7 @@ class_name Player
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 
 @export var move_speed: float = 200.0
-@export var maxHealth : int = 10
+@export var maxHealth : int = 50
 @export var health : int = maxHealth
 @export var coins : int = 0
 
