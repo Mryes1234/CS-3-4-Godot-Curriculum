@@ -23,7 +23,6 @@ func _on_detection_radius_body_exited(body: Node2D) -> void:
 	if body is Player:
 		is_hostile = false
 
-
 func _on_hit_radius_body_entered(body: Node2D) -> void:
 	can_damage = true
 	if body is Player and can_damage:
@@ -31,8 +30,13 @@ func _on_hit_radius_body_entered(body: Node2D) -> void:
 		
 		if body.has_method("change_health"):
 			body.change_health(damage_amount)
+		
+		can_damage = false
+	if position.distance_to(target)<15: 
+		speed = 0
 
 
 func _on_hit_radius_body_exited(body: Node2D) -> void:
 	if body is Player:
 		can_damage = false
+		speed = 150
