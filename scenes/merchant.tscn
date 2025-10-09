@@ -1,11 +1,13 @@
-[gd_scene load_steps=12 format=3 uid="uid://itwac34ln74u"]
+[gd_scene load_steps=18 format=3 uid="uid://itwac34ln74u"]
 
 [ext_resource type="Script" uid="uid://bpwf2t6fhhse8" path="res://scenes/merchant.gd" id="1_12ke4"]
 [ext_resource type="Texture2D" uid="uid://okqc50v5bl2y" path="res://assets/2D Pixel Dungeon Asset Pack/character and tileset/162039.png" id="1_v18v5"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_atw18"]
+size = Vector2(26, 18)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_v18v5"]
+radius = 134.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_12ke4"]
 atlas = ExtResource("1_v18v5")
@@ -31,6 +33,30 @@ region = Rect2(0, 119, 54, 49)
 atlas = ExtResource("1_v18v5")
 region = Rect2(0, 119, 54, 49)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_xp888"]
+atlas = ExtResource("1_v18v5")
+region = Rect2(54, 454, 54, 51)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m1kdm"]
+atlas = ExtResource("1_v18v5")
+region = Rect2(54, 510, 54, 51)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ghsth"]
+atlas = ExtResource("1_v18v5")
+region = Rect2(54, 567, 54, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_olu2c"]
+atlas = ExtResource("1_v18v5")
+region = Rect2(54, 625, 54, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m0sul"]
+atlas = ExtResource("1_v18v5")
+region = Rect2(54, 567, 54, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yebnt"]
+atlas = ExtResource("1_v18v5")
+region = Rect2(54, 511, 54, 51)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_atw18"]
 animations = [{
 "frames": [{
@@ -55,20 +81,47 @@ animations = [{
 "loop": true,
 "name": &"Idle",
 "speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xp888")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m1kdm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ghsth")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_olu2c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m0sul")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_yebnt")
+}],
+"loop": true,
+"name": &"Wave",
+"speed": 5.0
 }]
 
 [node name="Merchant" type="CharacterBody2D"]
 script = ExtResource("1_12ke4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-3, 13)
 shape = SubResource("RectangleShape2D_atw18")
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Shop radius" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Shop radius"]
 shape = SubResource("CircleShape2D_v18v5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_atw18")
 animation = &"Idle"
-frame_progress = 0.9342502
+autoplay = "Idle"
+
+[connection signal="body_entered" from="Shop radius" to="." method="_on_shop_radius_body_entered"]
+[connection signal="body_exited" from="Shop radius" to="." method="_on_shop_radius_body_exited"]
