@@ -1,0 +1,74 @@
+[gd_scene load_steps=12 format=3 uid="uid://itwac34ln74u"]
+
+[ext_resource type="Script" uid="uid://bpwf2t6fhhse8" path="res://scenes/merchant.gd" id="1_12ke4"]
+[ext_resource type="Texture2D" uid="uid://okqc50v5bl2y" path="res://assets/2D Pixel Dungeon Asset Pack/character and tileset/162039.png" id="1_v18v5"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_atw18"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_v18v5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_12ke4"]
+atlas = ExtResource("1_v18v5")
+region = Rect2(0, 7, 54, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v18v5"]
+atlas = ExtResource("1_v18v5")
+region = Rect2(0, 7, 54, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7rnkl"]
+atlas = ExtResource("1_v18v5")
+region = Rect2(0, 64, 54, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0gj23"]
+atlas = ExtResource("1_v18v5")
+region = Rect2(0, 64, 54, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1xj0k"]
+atlas = ExtResource("1_v18v5")
+region = Rect2(0, 119, 54, 49)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_krsg3"]
+atlas = ExtResource("1_v18v5")
+region = Rect2(0, 119, 54, 49)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_atw18"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_12ke4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v18v5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7rnkl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0gj23")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1xj0k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_krsg3")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}]
+
+[node name="Merchant" type="CharacterBody2D"]
+script = ExtResource("1_12ke4")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_atw18")
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_v18v5")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_atw18")
+animation = &"Idle"
+frame_progress = 0.9342502

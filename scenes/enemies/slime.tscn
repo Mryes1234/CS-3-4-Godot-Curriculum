@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://c6gaa4kprawy0"]
+[gd_scene load_steps=17 format=3 uid="uid://c6gaa4kprawy0"]
 
 [ext_resource type="Script" uid="uid://co5hnowm81a7y" path="res://scripts/enemies/enemy_base.gd" id="1_4h4y0"]
 [ext_resource type="Texture2D" uid="uid://barrcryhoe1ep" path="res://assets/Platformer Slimes v1.3/Ogre Slime Spritesheet.png" id="2_ahq63"]
@@ -6,6 +6,26 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rbebl"]
 size = Vector2(11, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uhx0m"]
+atlas = ExtResource("2_ahq63")
+region = Rect2(52, 77, 26, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7uxu4"]
+atlas = ExtResource("2_ahq63")
+region = Rect2(84, 77, 26, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mdcui"]
+atlas = ExtResource("2_ahq63")
+region = Rect2(115, 77, 26, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ikdmk"]
+atlas = ExtResource("2_ahq63")
+region = Rect2(147, 77, 26, 25)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jjup5"]
+atlas = ExtResource("2_ahq63")
+region = Rect2(178, 75, 28, 25)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4h4y0"]
 atlas = ExtResource("2_ahq63")
@@ -31,6 +51,26 @@ region = Rect2(112, 0, 16, 16)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_uhx0m")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7uxu4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mdcui")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ikdmk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jjup5")
+}],
+"loop": true,
+"name": &"Attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_4h4y0")
 }, {
 "duration": 1.0,
@@ -51,7 +91,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_4h4y0"]
-radius = 8.062258
+radius = 25.0
 
 [node name="slime" type="CharacterBody2D"]
 script = ExtResource("1_4h4y0")
@@ -61,10 +101,10 @@ position = Vector2(0, 2)
 shape = SubResource("RectangleShape2D_rbebl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1, 0.50000006)
 sprite_frames = SubResource("SpriteFrames_uhx0m")
-animation = &"idle"
+animation = &"Attack"
 autoplay = "idle"
-frame_progress = 0.10445527
 
 [node name="Detection Radius" parent="." instance=ExtResource("3_b58ev")]
 

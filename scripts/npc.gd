@@ -14,6 +14,7 @@ class_name npc
 #@export var state
 @export var type : String = ""
 @export var target : Vector2
+@export var vertical_offset = 20
 
 func _ready() -> void:
 	print(player)
@@ -36,7 +37,7 @@ func _on_detection_radius_body_exited(body: Node2D) -> void:
 
 func movement(_delta):
 	if is_hostile:
-		target = player.position
+		target = player.position - Vector2(0,vertical_offset)
 	else:
 		target = move_points[move_point]
 	var target_direction = position.direction_to(target)
