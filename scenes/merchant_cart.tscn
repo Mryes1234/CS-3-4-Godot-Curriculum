@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cafauclr3hqya"]
+
+[ext_resource type="Texture2D" uid="uid://dhw86k6u7jnum" path="res://assets/2D Pixel Dungeon Asset Pack/character and tileset/Merchant cart-4.png" id="1_3ibag"]
+
+[node name="Merchant Cart" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_3ibag")

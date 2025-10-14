@@ -1,7 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://itwac34ln74u"]
+[gd_scene load_steps=10 format=3 uid="uid://itwac34ln74u"]
 
 [ext_resource type="Script" uid="uid://bpwf2t6fhhse8" path="res://scenes/merchant.gd" id="1_12ke4"]
-[ext_resource type="Texture2D" uid="uid://okqc50v5bl2y" path="res://assets/2D Pixel Dungeon Asset Pack/character and tileset/162039.png" id="1_v18v5"]
+[ext_resource type="Texture2D" uid="uid://cs5mx16rfv5dq" path="res://assets/2D Pixel Dungeon Asset Pack/character and tileset/Merchant with cart!!!!!!!!.png" id="2_12ke4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_atw18"]
 size = Vector2(26, 18)
@@ -9,71 +9,33 @@ size = Vector2(26, 18)
 [sub_resource type="CircleShape2D" id="CircleShape2D_v18v5"]
 radius = 134.0
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_12ke4"]
-atlas = ExtResource("1_v18v5")
-region = Rect2(0, 7, 54, 50)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_v18v5"]
-atlas = ExtResource("1_v18v5")
-region = Rect2(0, 7, 54, 50)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_7rnkl"]
-atlas = ExtResource("1_v18v5")
-region = Rect2(0, 64, 54, 50)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_0gj23"]
-atlas = ExtResource("1_v18v5")
-region = Rect2(0, 64, 54, 50)
+atlas = ExtResource("2_12ke4")
+region = Rect2(162, 264, 54, 66)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1xj0k"]
-atlas = ExtResource("1_v18v5")
-region = Rect2(0, 119, 54, 49)
+atlas = ExtResource("2_12ke4")
+region = Rect2(162, 264, 54, 66)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0gj23"]
+atlas = ExtResource("2_12ke4")
+region = Rect2(162, 265, 54, 66)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_krsg3"]
-atlas = ExtResource("1_v18v5")
-region = Rect2(0, 119, 54, 49)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_xp888"]
-atlas = ExtResource("1_v18v5")
-region = Rect2(54, 454, 54, 51)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_m1kdm"]
-atlas = ExtResource("1_v18v5")
-region = Rect2(54, 510, 54, 51)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ghsth"]
-atlas = ExtResource("1_v18v5")
-region = Rect2(54, 567, 54, 50)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_olu2c"]
-atlas = ExtResource("1_v18v5")
-region = Rect2(54, 625, 54, 48)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_m0sul"]
-atlas = ExtResource("1_v18v5")
-region = Rect2(54, 567, 54, 50)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yebnt"]
-atlas = ExtResource("1_v18v5")
-region = Rect2(54, 511, 54, 51)
+atlas = ExtResource("2_12ke4")
+region = Rect2(162, 265, 54, 66)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_atw18"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_12ke4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_v18v5")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_7rnkl")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_0gj23")
+"texture": SubResource("AtlasTexture_1xj0k")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1xj0k")
+"texture": SubResource("AtlasTexture_0gj23")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_krsg3")
@@ -82,25 +44,7 @@ animations = [{
 "name": &"Idle",
 "speed": 5.0
 }, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_xp888")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_m1kdm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ghsth")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_olu2c")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_m0sul")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_yebnt")
-}],
+"frames": [],
 "loop": true,
 "name": &"Wave",
 "speed": 5.0
@@ -120,7 +64,7 @@ shape = SubResource("CircleShape2D_v18v5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_atw18")
-animation = &"Idle"
+animation = &"Wave"
 autoplay = "Idle"
 
 [connection signal="body_entered" from="Shop radius" to="." method="_on_shop_radius_body_entered"]
