@@ -1,17 +1,41 @@
-[gd_scene load_steps=9 format=3 uid="uid://bqems63ld323y"]
+[gd_scene load_steps=15 format=3 uid="uid://bqems63ld323y"]
 
 [ext_resource type="Script" uid="uid://draxyi2yul4g2" path="res://scripts/health_potion.gd" id="1_np0hw"]
 [ext_resource type="Texture2D" uid="uid://udxnr5kddbr5" path="res://assets/2D Pixel Dungeon Asset Pack/character and tileset/demonstration.png" id="2_gan2x"]
+[ext_resource type="Texture2D" uid="uid://qf7bp3xhw4it" path="res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/flasks/flasks_4_2.png" id="3_mlk75"]
+[ext_resource type="Texture2D" uid="uid://bs7a5m2en8pc6" path="res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/flasks/flasks_4_3.png" id="4_lwb0h"]
+[ext_resource type="Texture2D" uid="uid://b6ahr7532t5bl" path="res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/flasks/flasks_4_4.png" id="5_a6wep"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1nwoc"]
 atlas = ExtResource("2_gan2x")
 region = Rect2(48, 176, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oo0wb"]
+atlas = ExtResource("3_mlk75")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bfq1p"]
+atlas = ExtResource("4_lwb0h")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ot1h5"]
+atlas = ExtResource("5_a6wep")
+region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_mlk75"]
 animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_1nwoc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oo0wb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bfq1p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ot1h5")
 }],
 "loop": true,
 "name": &"new_animation",
@@ -98,12 +122,14 @@ _data = {
 
 [node name="HealthPotion" type="Area2D"]
 script = ExtResource("1_np0hw")
+amount = 5
 type = "health_potion"
 label = "small"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_mlk75")
 animation = &"new_animation"
+autoplay = "new_animation"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(2.5, 2.5)

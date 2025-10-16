@@ -35,11 +35,11 @@ func _on_hit_radius_body_entered(body: Node2D) -> void:
 		
 		can_damage = false
 		get_tree().create_timer(damage_cooldown).timeout.connect(_reset_damage_cooldown)
+		print("Slime attack you!")
 		speed = 0
 
 func _reset_damage_cooldown():
 	can_damage = true
-	print("Slime attack you!")
 	speed = 150
 
 func _on_hit_radius_body_exited(body: Node2D) -> void:

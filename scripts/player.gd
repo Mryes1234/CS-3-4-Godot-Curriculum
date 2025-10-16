@@ -8,7 +8,7 @@ class_name Player
 @export var maxHealth : int = 50
 @export var health : int = maxHealth
 @export var coins : int = 0
-
+#@export var inventory : [inventory_items]
 
 var facing: Vector2 = Vector2.ZERO
 
@@ -17,8 +17,23 @@ func _ready():
 	print("Player is ready!")
 	# TODO: Add detailed character info display (Lesson 1)
 
-func _physics_process(delta):
+func _physics_process(_delta):
 	handle_movement()
+
+func select_item():
+	pass
+
+func display_inventory(item_number):
+	pass
+	#for every item in inventory
+		#print(item.description)
+		#print(item.price)
+
+func add_item():
+	pass
+
+func remove_item():
+	pass
 
 func handle_movement():
 	# Get input direction from arrow keys
