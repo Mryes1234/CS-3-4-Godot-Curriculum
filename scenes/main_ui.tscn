@@ -1,0 +1,22 @@
+[gd_scene load_steps=2 format=3 uid="uid://daunbashrrb53"]
+
+[ext_resource type="PackedScene" uid="uid://d3qr3vjptunos" path="res://scenes/shop_ui.tscn" id="1_fnul3"]
+
+[node name="Main UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1024.0
+offset_bottom = -608.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Shop" parent="." instance=ExtResource("1_fnul3")]
+layout_mode = 1
+offset_right = 154.8801
+offset_bottom = 91.96
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(128, 76)
+zoom = Vector2(5, 5)

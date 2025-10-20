@@ -1,6 +1,6 @@
-[gd_scene load_steps=17 format=3 uid="uid://itwac34ln74u"]
+[gd_scene load_steps=18 format=3 uid="uid://itwac34ln74u"]
 
-[ext_resource type="Script" uid="uid://bpwf2t6fhhse8" path="res://scenes/merchant.gd" id="1_12ke4"]
+[ext_resource type="Script" uid="uid://bpwf2t6fhhse8" path="res://scripts/merchant.gd" id="1_12ke4"]
 [ext_resource type="Texture2D" uid="uid://cs5mx16rfv5dq" path="res://assets/2D Pixel Dungeon Asset Pack/character and tileset/Merchant with cart!!!!!!!!.png" id="2_12ke4"]
 [ext_resource type="Texture2D" uid="uid://dfljnj65nmmk2" path="res://assets/2D Pixel Dungeon Asset Pack/character and tileset/Merchant with cart waving 3!!!!!!!!.png" id="3_7rnkl"]
 
@@ -93,6 +93,9 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7rnkl"]
+size = Vector2(13, 45)
+
 [node name="Merchant" type="CharacterBody2D"]
 script = ExtResource("1_12ke4")
 
@@ -106,9 +109,15 @@ shape = SubResource("CircleShape2D_v18v5")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_atw18")
-animation = &"Idle"
+animation = &"Wave"
 autoplay = "Idle"
-frame_progress = 0.9041804
+
+[node name="kill area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="kill area"]
+position = Vector2(-20.5, 5.5)
+shape = SubResource("RectangleShape2D_7rnkl")
 
 [connection signal="body_entered" from="Shop radius" to="." method="_on_shop_radius_body_entered"]
 [connection signal="body_exited" from="Shop radius" to="." method="_on_shop_radius_body_exited"]
+[connection signal="body_entered" from="kill area" to="." method="_on_kill_area_body_entered"]

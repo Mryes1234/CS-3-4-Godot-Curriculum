@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Items" load_steps=3 format=3 uid="uid://cuu0yrjshufrp"]
+
+[ext_resource type="Script" uid="uid://qykv38tasyv1" path="res://scripts/item.gd" id="1_yno2i"]
+[ext_resource type="Texture2D" uid="uid://dddcdpi2j4qi0" path="res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/keys/keys_1_1.png" id="2_057l1"]
+
+[resource]
+script = ExtResource("1_yno2i")
+itemname = "Key"
+texture = ExtResource("2_057l1")
+metadata/_custom_type_script = "uid://qykv38tasyv1"

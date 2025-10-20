@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Items" load_steps=3 format=3 uid="uid://b3aeinsw3w3ed"]
+
+[ext_resource type="Script" uid="uid://qykv38tasyv1" path="res://scripts/item.gd" id="1_o27us"]
+[ext_resource type="Texture2D" uid="uid://d3iyw62y2x23r" path="res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/flasks/flasks_4_1.png" id="2_l0lnd"]
+
+[resource]
+script = ExtResource("1_o27us")
+itemname = "Health_potion_big"
+texture = ExtResource("2_l0lnd")
+metadata/_custom_type_script = "uid://qykv38tasyv1"

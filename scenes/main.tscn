@@ -60,7 +60,6 @@ position = Vector2(-204.5, -56.5)
 
 [node name="HealthPotion" parent="Tilemap/StuffOnTop" instance=ExtResource("6_tefeu")]
 position = Vector2(18, 17.5)
-amount = 5
 
 [node name="Coin" parent="Tilemap/StuffOnTop" instance=ExtResource("5_tbgi4")]
 position = Vector2(-9.5, 26)
