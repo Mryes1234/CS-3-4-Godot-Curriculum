@@ -10,6 +10,8 @@ size = Vector2(26, 18)
 [sub_resource type="CircleShape2D" id="CircleShape2D_v18v5"]
 radius = 134.0
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_7rnkl"]
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_7rnkl"]
 atlas = ExtResource("2_12ke4")
 region = Rect2(148, 266, 72, 66)
@@ -93,31 +95,28 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7rnkl"]
-size = Vector2(13, 45)
-
 [node name="Merchant" type="CharacterBody2D"]
 script = ExtResource("1_12ke4")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_atw18")
 
+[node name="Detect radius" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Detect radius"]
+shape = SubResource("CircleShape2D_v18v5")
+
 [node name="Shop radius" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Shop radius"]
-shape = SubResource("CircleShape2D_v18v5")
+shape = SubResource("CircleShape2D_7rnkl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_atw18")
 animation = &"Wave"
 autoplay = "Idle"
 
-[node name="kill area" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="kill area"]
-position = Vector2(-20.5, 5.5)
-shape = SubResource("RectangleShape2D_7rnkl")
-
+[connection signal="body_entered" from="Detect radius" to="." method="_on_detect_radius_body_entered"]
+[connection signal="body_exited" from="Detect radius" to="." method="_on_detect_radius_body_exited"]
 [connection signal="body_entered" from="Shop radius" to="." method="_on_shop_radius_body_entered"]
 [connection signal="body_exited" from="Shop radius" to="." method="_on_shop_radius_body_exited"]
-[connection signal="body_entered" from="kill area" to="." method="_on_kill_area_body_entered"]
