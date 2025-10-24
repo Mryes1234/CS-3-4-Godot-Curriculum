@@ -2,7 +2,7 @@ extends PanelContainer
 
 signal pressed()
 
-@export var item: Item
+@export var item: Items
 
 @onready var texture_rect: TextureRect = %TextureRect
 @onready var label: Label = %Label

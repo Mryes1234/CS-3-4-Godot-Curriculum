@@ -7,6 +7,3 @@ const SHOP_ITEM = preload("res://scenes/shop_item.tscn")
 
 func _ready() -> void:
 	shop_page.hide()
-	
-
-func 
