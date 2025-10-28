@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cjy8b8uhqytfq"]
 
-[ext_resource type="Script" uid="uid://dr84r7jimrmdh" path="res://scenes/confirm_window.gd" id="1_133b1"]
+[ext_resource type="Script" uid="uid://dr84r7jimrmdh" path="res://scripts/confirm_window.gd" id="1_133b1"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uvf2b"]
 border_width_left = 5

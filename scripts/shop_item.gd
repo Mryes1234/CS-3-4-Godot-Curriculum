@@ -10,7 +10,7 @@ signal pressed()
 
 func _ready():
 	texture_rect.texture = item.texture
-	label.text = item.itemName
+	label.text = item.item_name
 	
 	button.pressed.connect(on_button_pressed)
 

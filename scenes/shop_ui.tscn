@@ -65,7 +65,7 @@ columns = 5
 [node name="ConfirmWindow" parent="." instance=ExtResource("2_oixfk")]
 unique_name_in_owner = true
 layout_mode = 1
-offset_left = 250.2315
-offset_top = -77.1125
-offset_right = 540.2315
-offset_bottom = 66.8875
+offset_left = -149.7685
+offset_top = -56.112503
+offset_right = 140.2315
+offset_bottom = 87.8875

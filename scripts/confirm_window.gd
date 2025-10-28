@@ -13,6 +13,7 @@ func _ready():
 	
 	confirm_button.pressed.connect(_on_button_pressed.bind(true))
 	cancel_button.pressed.connect(_on_button_pressed.bind(false))
+
 func _on_visibility_changed():
 	if visible:
 		label.text = text

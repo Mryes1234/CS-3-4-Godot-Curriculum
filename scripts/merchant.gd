@@ -10,7 +10,7 @@ signal new_item_added(item: Items)
 const SHOP_ITEM = preload("res://scenes/shop_item.tscn")
 
 func _ready() -> void:
-	shop_page.hide()
+	shop_page.hide()    
 	confirm_window.hide()
 	_refresh_shop_items()
 
@@ -25,7 +25,7 @@ func _refresh_shop_items():
 		shopitemNode.pressed.connect(on_item_selected)
 
 func on_item_selected(itemResource: Items):
-	confirm_window.text = "Do you want to buy %s ?" % itemResource.itemName
+	confirm_window.text = "Do you want to buy %s ?" % itemResource.item_name
 	confirm_window.show()
 	
 	var confirm = await confirm_window.confirmed
