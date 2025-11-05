@@ -146,7 +146,6 @@ func heal(amount: float) -> bool:
 
 	return true
 
-
 ## Gain experience points
 ## Returns true if this XP gain caused a level up
 func gain_experience(amount: float) -> bool:
@@ -214,6 +213,9 @@ func upgrade_health(amount: float) -> bool:
 	health_changed.emit(current_health, max_health)
 	return true
 
+#func upgrade_damage(amount: float) -> bool:
+	#take_damage += amount
+	#return true
 
 ## Upgrade movement speed
 ## Returns true on successful upgrade
