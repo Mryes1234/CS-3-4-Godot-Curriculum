@@ -68,6 +68,7 @@ var contact_damage: float = 10.0
 var move_speed: float = 100.0
 var detection_range: float = 1000.0
 var xp_value: int = 10
+@onready var hud: HUD = $HUD
 
 # References
 ## Player reference - set by WaveSpawner when enemy is spawned
@@ -212,6 +213,7 @@ func apply_separation(current_direction: Vector2) -> Vector2:
 ## Take damage from player weapons
 ## Returns true if this damage killed the enemy
 func take_damage(amount: float) -> bool:
+	amount *= player.damage_mult
 	current_health -= amount
 
 	# Visual feedback (optional: flash sprite)

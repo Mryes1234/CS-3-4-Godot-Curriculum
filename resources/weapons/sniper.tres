@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="ProjectileWeaponResource" load_steps=4 format=3 uid="uid://nm63gpeav42m"]
+
+[ext_resource type="Resource" uid="uid://ble1v8rkd20rv" path="res://resources/projectiles/sniper_projectile.tres" id="2_jf3yv"]
+[ext_resource type="Script" uid="uid://c6yex7bm6vt2g" path="res://scripts/resources/projectile_weapon_resource.gd" id="3_jf3yv"]
+[ext_resource type="Texture2D" uid="uid://bmqhsg5w5808p" path="res://assets/2D Pixel Dungeon Asset Pack/interface/arrow_3.png" id="3_tfk77"]
+
+[resource]
+script = ExtResource("3_jf3yv")
+projectile_config = ExtResource("2_jf3yv")
+spread_angle = 1.0
+item_id = "sniper"
+item_name = "Sniper"
+description = "A long range weapon with high damage."
+value = 50
+base_damage = 30.0
+fire_rate = 0.5
+weapon_range = 1000.0
+accuracy_spread = 1.0
+weapon_sprite = ExtResource("3_tfk77")

@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="EnemyResource" load_steps=3 format=3 uid="uid://oexpprl0e6d4"]
+
+[ext_resource type="SpriteFrames" uid="uid://doqat4n0qsu7i" path="res://resources/animations/blue_slime_frames.tres" id="1_qghqj"]
+[ext_resource type="Script" uid="uid://bxtjti5hlu2op" path="res://scripts/resources/enemy_resource.gd" id="2_x5iqw"]
+
+[resource]
+script = ExtResource("2_x5iqw")
+enemy_id = "lightning_slime"
+enemy_name = "Lightning Slime"
+animated_frames = ExtResource("1_qghqj")
+sprite_scale = 3.0
+max_health = 60.0
+contact_damage = 6.0
+move_speed = 200.0
+detection_range = 800.0
+xp_value = 330
+unlock_wave = 6
+spawn_weight = 3
+credit_cost = 20

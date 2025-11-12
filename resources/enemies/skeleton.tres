@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="EnemyResource" load_steps=3 format=3 uid="uid://cltjpm7558fr1"]
+
+[ext_resource type="SpriteFrames" uid="uid://bwc6b4ss7n3is" path="res://resources/animations/skeleton_frames.tres" id="1_yxr72"]
+[ext_resource type="Script" uid="uid://bxtjti5hlu2op" path="res://scripts/resources/enemy_resource.gd" id="2_7hthy"]
+
+[resource]
+script = ExtResource("2_7hthy")
+enemy_id = "skeleton"
+enemy_name = "Skeleton"
+animated_frames = ExtResource("1_yxr72")
+sprite_scale = 2.0
+detection_range = 800.0
+xp_value = 20
+unlock_wave = 4
+spawn_weight = 5
+credit_cost = 15

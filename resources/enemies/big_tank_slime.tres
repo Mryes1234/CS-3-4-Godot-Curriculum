@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="EnemyResource" load_steps=3 format=3 uid="uid://c1fapu0mcij3h"]
+
+[ext_resource type="SpriteFrames" uid="uid://vb5a3rr6m1hr" path="res://resources/animations/red_slime_frames.tres" id="1_oqsvj"]
+[ext_resource type="Script" uid="uid://bxtjti5hlu2op" path="res://scripts/resources/enemy_resource.gd" id="2_r0m2n"]
+
+[resource]
+script = ExtResource("2_r0m2n")
+enemy_id = "big_tank_slime"
+enemy_name = "Big Tank Slime"
+animated_frames = ExtResource("1_oqsvj")
+sprite_scale = 3.0
+max_health = 200.0
+contact_damage = 20.0
+move_speed = 50.0
+detection_range = 800.0
+xp_value = 30
+unlock_wave = 7
+spawn_weight = 2
+credit_cost = 30

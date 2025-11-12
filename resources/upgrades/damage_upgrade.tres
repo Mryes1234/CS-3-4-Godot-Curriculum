@@ -5,7 +5,7 @@
 [resource]
 script = ExtResource("1_lsgis")
 upgrade_id = "damage_boost"
-upgrade_name = "Damage +5"
-description = "Increases your damage dealt"
-stat_type = 1
-amount = 5.0
+upgrade_name = "Damage Mult +5%"
+description = "Increases your damage by 5%."
+stat_type = 2
+amount = 0.05

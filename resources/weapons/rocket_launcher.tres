@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="ProjectileWeaponResource" load_steps=5 format=3 uid="uid://df6jw6402f67c"]
+
+[ext_resource type="Texture2D" uid="uid://cqatq7nlwor0e" path="res://assets/point_arrow.png" id="1_oyvlj"]
+[ext_resource type="Resource" uid="uid://beam026lhmsqr" path="res://resources/projectiles/rocket_projectile.tres" id="2_v6gk1"]
+[ext_resource type="Script" uid="uid://c6yex7bm6vt2g" path="res://scripts/resources/projectile_weapon_resource.gd" id="3_3wntd"]
+[ext_resource type="Texture2D" uid="uid://borqtlgc8cl6p" path="res://assets/2D Pixel Dungeon Asset Pack/interface/square_left_1.png" id="4_v6gk1"]
+
+[resource]
+script = ExtResource("3_3wntd")
+projectile_config = ExtResource("2_v6gk1")
+spread_angle = 0.0
+item_id = "rocket_launcher"
+item_name = "Rocket Launcher"
+description = "A high damage explosive weapon with splash damage."
+icon = ExtResource("1_oyvlj")
+value = 50
+base_damage = 100.0
+weapon_range = 750.0
+accuracy_spread = 2.0
+weapon_sprite = ExtResource("4_v6gk1")

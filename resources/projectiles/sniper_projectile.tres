@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="ProjectileResource" load_steps=3 format=3 uid="uid://ble1v8rkd20rv"]
+
+[ext_resource type="Script" uid="uid://dmxm5o1dwdxrs" path="res://scripts/resources/projectile_resource.gd" id="1_cp1j6"]
+[ext_resource type="Texture2D" uid="uid://doih0wyrka2p1" path="res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/coin/coin_3.png" id="2_cp1j6"]
+
+[resource]
+script = ExtResource("1_cp1j6")
+texture = ExtResource("2_cp1j6")
+scale = Vector2(0.5, 0.5)
+speed = 500.0
+lifetime = 4.0
+damage = 30.0
+piercing = true
+max_pierces = 5

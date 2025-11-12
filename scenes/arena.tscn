@@ -1,10 +1,11 @@
-[gd_scene load_steps=14 format=3 uid="uid://cxvnak5nqpr8a"]
+[gd_scene load_steps=22 format=3 uid="uid://cxvnak5nqpr8a"]
 
 [ext_resource type="Script" uid="uid://bnk74kv0ariww" path="res://scripts/game_world.gd" id="1_game_world"]
 [ext_resource type="TileSet" uid="uid://wio17aw1fnr2" path="res://tilesets/dungeon.tres" id="2_tileset"]
 [ext_resource type="PackedScene" uid="uid://cqvpxnx2pwqhk" path="res://scenes/player.tscn" id="3_player"]
 [ext_resource type="PackedScene" uid="uid://bvlan3m8qpr0k" path="res://scenes/weapon_system.tscn" id="4_weapon"]
 [ext_resource type="PackedScene" uid="uid://c8wk4n6mqpr3m" path="res://scenes/ui/hud.tscn" id="5_hud"]
+[ext_resource type="Resource" uid="uid://c73jpq85ul2ig" path="res://resources/weapons/shotgun.tres" id="5_xsx6r"]
 [ext_resource type="PackedScene" uid="uid://fjrkobe6iwdw" path="res://scenes/ui/level_up_ui.tscn" id="6_levelup"]
 [ext_resource type="Script" uid="uid://bxtjti5hlu2op" path="res://scripts/resources/enemy_resource.gd" id="7_ixwup"]
 [ext_resource type="Script" uid="uid://c0j86ysrsp8s8" path="res://scripts/wave_spawner.gd" id="7_spawner"]
@@ -13,6 +14,13 @@
 [ext_resource type="Resource" uid="uid://da805nrige2g0" path="res://resources/enemies/fast_slime.tres" id="9_8vbsj"]
 [ext_resource type="Script" uid="uid://b27lwx066vj4h" path="res://scripts/resources/stat_upgrade_resource.gd" id="10_k1k1x"]
 [ext_resource type="Resource" uid="uid://cq8xm2v8pqb3h" path="res://resources/upgrades/health_upgrade.tres" id="11_ajq0i"]
+[ext_resource type="Resource" uid="uid://bx4go0dqbr51i" path="res://resources/enemies/tank_slime.tres" id="11_ixwup"]
+[ext_resource type="Resource" uid="uid://biw3pdb6f0mco" path="res://resources/enemies/boss_slime.tres" id="12_a43o1"]
+[ext_resource type="Resource" uid="uid://oexpprl0e6d4" path="res://resources/enemies/lightning_slime.tres" id="13_ow1aj"]
+[ext_resource type="Resource" uid="uid://cltjpm7558fr1" path="res://resources/enemies/skeleton.tres" id="14_6joey"]
+[ext_resource type="Resource" uid="uid://c1fapu0mcij3h" path="res://resources/enemies/big_tank_slime.tres" id="15_7wjmx"]
+[ext_resource type="Resource" uid="uid://c4xoixryeqchq" path="res://resources/upgrades/damage_upgrade.tres" id="20_lw7ys"]
+[ext_resource type="Resource" uid="uid://dndpj2tass0gi" path="res://resources/upgrades/speed_upgrade.tres" id="21_htucp"]
 
 [node name="Arena" type="Node2D"]
 script = ExtResource("1_game_world")
@@ -24,14 +32,15 @@ tile_set = ExtResource("2_tileset")
 unique_name_in_owner = true
 position = Vector2(640, 380)
 
-[node name="WeaponSystem" parent="Player" instance=ExtResource("4_weapon")]
+[node name="WeaponSystem2" parent="Player" instance=ExtResource("4_weapon")]
+equipped_weapon = ExtResource("5_xsx6r")
 
 [node name="WaveSpawner" type="Node2D" parent="."]
 script = ExtResource("7_spawner")
 enemy_scene = ExtResource("8_enemy")
-available_enemies = Array[ExtResource("7_ixwup")]([ExtResource("8_a43o1"), ExtResource("9_8vbsj")])
+available_enemies = Array[ExtResource("7_ixwup")]([ExtResource("8_a43o1"), ExtResource("9_8vbsj"), ExtResource("11_ixwup"), ExtResource("12_a43o1"), ExtResource("13_ow1aj"), ExtResource("14_6joey"), ExtResource("15_7wjmx")])
 
 [node name="HUD" parent="." instance=ExtResource("5_hud")]
 
 [node name="LevelUpUI" parent="." instance=ExtResource("6_levelup")]
-available_upgrades = Array[ExtResource("10_k1k1x")]([ExtResource("11_ajq0i"), ExtResource("11_ajq0i"), ExtResource("11_ajq0i"), ExtResource("11_ajq0i"), ExtResource("11_ajq0i"), ExtResource("11_ajq0i")])
+available_upgrades = Array[ExtResource("10_k1k1x")]([ExtResource("11_ajq0i"), ExtResource("20_lw7ys"), ExtResource("21_htucp")])

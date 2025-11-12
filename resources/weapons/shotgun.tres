@@ -1,0 +1,21 @@
+[gd_resource type="Resource" script_class="ProjectileWeaponResource" load_steps=5 format=3 uid="uid://c73jpq85ul2ig"]
+
+[ext_resource type="Texture2D" uid="uid://cqatq7nlwor0e" path="res://assets/point_arrow.png" id="1_eea6l"]
+[ext_resource type="Resource" uid="uid://b7qxm2v8pqb3k" path="res://resources/projectiles/basic_projectile.tres" id="2_ok5mh"]
+[ext_resource type="Script" uid="uid://c6yex7bm6vt2g" path="res://scripts/resources/projectile_weapon_resource.gd" id="3_l7w0u"]
+[ext_resource type="Texture2D" uid="uid://8s6lkq7apvmo" path="res://assets/2D Pixel Dungeon Asset Pack/items and trap_animation/arrow/arrow_1.png" id="4_ok5mh"]
+
+[resource]
+script = ExtResource("3_l7w0u")
+projectile_config = ExtResource("2_ok5mh")
+projectile_count = 10
+spread_angle = 20.0
+item_id = "shotgun"
+item_name = "Shotgun"
+description = "A multi-shot weapon for mass destruction."
+icon = ExtResource("1_eea6l")
+value = 50
+fire_rate = 0.5
+weapon_range = 300.0
+accuracy_spread = 2.5
+weapon_sprite = ExtResource("4_ok5mh")

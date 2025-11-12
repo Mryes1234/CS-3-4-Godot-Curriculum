@@ -1,0 +1,19 @@
+[gd_resource type="Resource" script_class="EnemyResource" load_steps=3 format=3 uid="uid://biw3pdb6f0mco"]
+
+[ext_resource type="SpriteFrames" uid="uid://cnp8r3naqst6h" path="res://resources/animations/ogre_slime_frames.tres" id="1_8euuf"]
+[ext_resource type="Script" uid="uid://bxtjti5hlu2op" path="res://scripts/resources/enemy_resource.gd" id="2_54y4x"]
+
+[resource]
+script = ExtResource("2_54y4x")
+enemy_id = "boss_slime"
+enemy_name = "Boss Slime"
+animated_frames = ExtResource("1_8euuf")
+sprite_scale = 5.0
+max_health = 500.0
+contact_damage = 20.0
+move_speed = 30.0
+detection_range = 800.0
+xp_value = 1000
+unlock_wave = 5
+spawn_weight = 1
+credit_cost = 100

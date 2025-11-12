@@ -60,6 +60,7 @@ var current_health: float = 100.0
 var level: int = 1
 var current_xp: float = 0.0
 var xp_to_next_level: float = 100.0
+@export var damage_mult = 1.0
 
 
 # Signals for UI updates
@@ -213,9 +214,9 @@ func upgrade_health(amount: float) -> bool:
 	health_changed.emit(current_health, max_health)
 	return true
 
-#func upgrade_damage(amount: float) -> bool:
-	#take_damage += amount
-	#return true
+func upgrade_damage(amount: float) -> bool:
+	damage_mult += amount
+	return true
 
 ## Upgrade movement speed
 ## Returns true on successful upgrade
